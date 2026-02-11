@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Aránzazu Rodríguez Ramírez</title>
+
+<style>
+
+/* ===== ESTILO GENERAL ===== */
+
+body{
+font-family: Arial, sans-serif;
+margin:40px;
+background:#f8f8f8;
+color:#2c2c2c;
+}
+
+/* ===== PESTAÑAS ===== */
+
+.tabs{
+display:flex;
+gap:12px;
+margin-bottom:24px;
+}
+
+.tab{
+background:white;
+border:1px solid #d9d9d9;
+padding:10px 16px;
+border-radius:12px;
+cursor:pointer;
+font-weight:bold;
+color:#3e5a56;
+}
+
+.tab.activa{
+border:2px solid #3e5a56;
+}
+
+/* ===== SECCIONES ===== */
+
+.seccion{ display:none; }
+.seccion.activa{ display:block; }
+
+/* ===== LAYOUT INICIO ===== */
+
+.contenedor{
+  display:flex;
+  gap:60px;
+  align-items:center; 
+}
+
+.izquierda{ width:40%; }
+.derecha{ width:60%; }
+
+img{
+width:100%;
+max-width:360px;
+border-radius:14px;
+margin-bottom:20px;
+}
+
+h1{
+color:#3e5a56;
+margin-bottom:10px;
+font-size:42px;
+line-height:1.1;
+}
+
+h2{
+color:#3e5a56;
+margin:0 0 6px 0;
+font-size:26px;
+}
+
+p{
+line-height:1.6;
+margin:0;
+color:#444;
+font-size:16px;
+}
+
+.lead{
+margin-top:10px;
+}
+
+/* ===== SERVICIOS ===== */
+
+.servicio{
+display:flex;
+gap:14px;
+margin-bottom:28px;
+align-items:flex-start;
+}
+
+.icono{
+font-size:26px;
+}
+
+/* ===== BOTÓN CTA GRANDE ===== */
+
+.botones-cta{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:25px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.cta{
+background:#7a8a63;
+color:white;
+border:none;
+padding:18px 36px;
+border-radius:40px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 6px 14px rgba(0,0,0,0.15);
+transition:all 0.25s ease;
+}
+
+.cta:hover{
+background:#4f6f6a;
+transform:translateY(-2px);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== FORMACIÓN ===== */
+
+.bloque{
+background:white;
+padding:18px;
+border-radius:12px;
+margin-bottom:18px;
+border:1px solid #e6e6e6;
+}
+
+ul{
+margin:0;
+padding-left:18px;
+line-height:1.7;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width:900px){
+.contenedor{ flex-direction:column; }
+.izquierda,.derecha{ width:100%; }
+}
+
+/* ===== CONTACTO ===== */
+
+.contacto{
+display:flex;
+gap:60px;
+margin-top:80px;
+align-items:flex-start;
+}
+
+.contacto-info{
+width:35%;
+background:#efe6d8;
+padding:30px;
+border-radius:14px;
+}
+
+.contacto-info h2{
+margin-top:0;
+color:#3e5a56;
+}
+
+.contacto-info p{
+margin-bottom:20px;
+line-height:1.5;
+}
+
+.contacto-form{
+width:65%;
+}
+
+.contacto-form form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.fila{
+display:flex;
+gap:20px;
+}
+
+.fila input{
+flex:1;
+}
+
+input,
+textarea{
+padding:16px;
+border:none;
+background:#f3f3f3;
+border-radius:8px;
+font-size:15px;
+}
+
+textarea{
+height:160px;
+resize:none;
+}
+
+.captcha{
+display:flex;
+align-items:center;
+gap:15px;
+justify-content:flex-end;
+}
+
+.captcha input{
+width:60px;
+text-align:center;
+}
+
+button{
+background:#7a8a63;
+color:white;
+border:none;
+padding:14px 28px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#3e5a56;
+}
+</style>
+
+<script>
+
+function mostrarSeccion(id){
+
+document.querySelectorAll(".seccion").forEach(s=>s.classList.remove("activa"));
+document.getElementById(id).classList.add("activa");
+
+document.querySelectorAll(".tab").forEach(t=>t.classList.remove("activa"));
+document.getElementById("tab-"+id).classList.add("activa");
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<!-- ===== PESTAÑAS ===== -->
+
+<div class="tabs">
+
+<button class="tab activa" id="tab-inicio" onclick="mostrarSeccion('inicio')">
+Inicio
+</button>
+
+<button class="tab" id="tab-formacion" onclick="mostrarSeccion('formacion')">
+Formación
+</button>
+<button class="tab" id="tab-trayectoria" onclick="mostrarSeccion('trayectoria')">
+Trayectoria profesional
+</button>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- ===================== INICIO ======================== -->
+<!-- ===================================================== -->
+
+<div id="inicio" class="seccion activa">
+
+<div class="contenedor">
+
+<div class="izquierda">
+
+<img src="foto.jpg">
+
+<h1>Aránzazu Rodríguez Ramírez</h1>
+
+<p class="lead">
+Especialista en marketing digital y transformación digital para empresas que buscan crecer, optimizar procesos y generar ventaja competitiva.
+</p>
+</div>
+
+<div class="derecha">
+
+<div class="servicio">
+<div class="icono">🎯</div>
+<div>
+<h2>Experta en Marketing 360</h2>
+<p>
+Estrategia integral para convertir visibilidad en crecimiento real. Diseño y ejecución de planes que conectan marca, procesos y resultados.
+</p>
+</div>
+</div>
+
+<div class="servicio">
+<div class="icono">🌍</div>
+<div>
+<h2>Dirección de Transformación Digital</h2>
+<p>
+Digitalizar con criterio para optimizar decisiones y operaciones mediante soluciones tecnológicas que aportan valor real al negocio.
+</p>
+</div>
+</div>
+
+<div class="servicio">
+<div class="icono">🧠</div>
+<div>
+<h2>Docencia Digital</h2>
+<p>
+Formación aplicada para impulsar capacidades profesionales y facilitar la integración tecnológica en equipos y profesionales.
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- ==================== FORMACIÓN ====================== -->
+<!-- ===================================================== -->
+
+<div id="formacion" class="seccion">
+
+<h1>Formación</h1>
+
+<!-- ===== FORMACIÓN OFICIAL ===== -->
+
+<h2>Formación oficial</h2>
+
+<div class="grid-formacion">
+
+<div class="tarjeta">
+<h3>Microgrado en Marketing</h3>
+<p class="meta">UNED | 2027</p>
+<p class="desc">
+Esta formación me ha permitido comprender cómo funcionan el mercado y las decisiones empresariales desde una perspectiva de marketing estratégico. Gracias a ello, puedo ayudar a empresas de cualquier tamaño a optimizar su posicionamiento, mejorar la conexión con sus clientes y convertir sus acciones de marketing en crecimiento real y resultados medibles, alineando comunicación, estrategia y objetivos de negocio.
+</p>
+</div>
+<div class="tarjeta">
+<h3>Grado en Educación Infantil</h3>
+<p class="meta">Facultad de Ciencias de la Educación | Granada |2021 </p>
+<p class="desc">
+Esta formación me ha permitido desarrollar una sólida capacidad para diseñar procesos de aprendizaje, comunicación efectiva y adaptación a distintos perfiles. Aplicado al entorno empresarial, me ayuda a estructurar formación, facilitar la adquisición de competencias y mejorar la forma en que equipos y profesionales integran nuevos conocimientos, impulsando el desarrollo organizativo y la mejora continua.
+</p>
+</div>
+<div class="tarjeta">
+<h3>Técnico Superior en Educación Infantil</h3>
+<p class="meta">I.E.S. Jiménez de Quesada | 2017</p>
+<p class="desc">
+Esta formación reforzó mi capacidad para planificar, organizar y ejecutar procesos educativos con enfoque práctico y estructurado. En el ámbito empresarial, se traduce en habilidades para diseñar dinámicas de aprendizaje, facilitar la comunicación y apoyar la adquisición de competencias, contribuyendo a la formación eficaz de equipos y a la mejora del rendimiento profesional.
+</p>
+</div>
+</div>
+
+
+
+
+<!-- ===== FORMACIÓN COMPLEMENTARIA ===== -->
+
+<h2>Formación complementaria</h2>
+
+<!-- ===== TRANSFORMACIÓN DIGITAL ===== -->
+
+<h3>Transformación digital</h3>
+
+<div class="grid-formacion">
+
+<div class="tarjeta">
+<h4>Agente del Cambio</h4>
+<p class="meta">Escuela de Organización Industrial (EOI) | 2025</p>
+<p class="desc">Esta formación me ha capacitado para impulsar procesos de transformación digital, facilitando la adopción tecnológica y la mejora de procesos organizativos. En empresa, se traduce en una visión estratégica para acompañar equipos en el cambio, optimizar flujos de trabajo y alinear digitalización con objetivos de negocio.</p>
+</div>
+<div class="tarjeta">
+<h4>Aplicaciones prácticas de la IA en Pymes</h4>
+<p class="meta">PYMES Transformación Digital | 2026</p>
+<p class="desc">Esta formación se centra en el uso real de la inteligencia artificial para optimizar operaciones empresariales. Permite identificar oportunidades de automatización, mejorar la productividad y facilitar la integración tecnológica en pequeñas y medianas empresas.</p>
+</div>
+<h4>Certificación en Inteligencia Artificial aplicada a la Educación</h4>
+<p class="meta">IOE Business School | 2025</p>
+<p class="desc">Esta certificación me ha permitido comprender cómo integrar la inteligencia artificial en procesos de aprendizaje y capacitación de forma práctica y estratégica. Aplicado al entorno empresarial, facilita el diseño de formación más eficiente, la personalización del aprendizaje y la adopción tecnológica, ayudando a los equipos a desarrollar competencias digitales alineadas con las necesidades reales del negocio.</p>
+</div>
+<h4>Introducción al Big Data e IA</h4>
+<p class="meta">Dicampus | 2025</p>
+<p class="desc">Me ha permitido comprender el valor de los datos y la inteligencia artificial en la toma de decisiones. Aplicado al entorno empresarial, facilita el análisis de información, la optimización de procesos y la incorporación de soluciones digitales orientadas a eficiencia y crecimiento.</p>
+
+
+
+
+
+<!-- ===== MARKETING ===== -->
+
+<h3>Marketing</h3>
+
+<div class="grid-formacion">
+
+<div class="tarjeta">
+<h4>Community Manager</h4>
+<p class="meta">Escuela Marketing and Web | 2026</p>
+<p class="desc">Esta formación refuerza mi capacidad para gestionar la presencia digital de las marcas desde una perspectiva estratégica. Aplicado al entorno empresarial, me permite optimizar la comunicación en redes, fortalecer la relación con la audiencia y convertir la visibilidad online en posicionamiento, engagement y oportunidades de crecimiento.</p>
+</div>
+
+</div>
+
+
+<!-- ===== EDUCACIÓN ===== -->
+
+<h3>Educación</h3>
+
+<div class="grid-formacion">
+
+<div class="tarjeta">
+<h4>Tutorización del Aprendizaje en la Empresa</h4>
+<p class="meta">Instituto Europeo para el Empleo | 2025</p>
+<p class="desc">Refuerza mi capacidad para estructurar procesos de formación interna y acompañamiento profesional. En empresa, contribuye a mejorar la transferencia de conocimiento, la capacitación de equipos y el desarrollo de competencias alineadas con objetivos organizativos.</p>
+</div>
+<h4>Elaboración de Programaciones Didácticas</h4>
+<p class="meta">Universidad Católica de Ávila | 2023</p>
+<p class="desc">Fortalece la planificación estratégica de contenidos y objetivos formativos. Aplicado a empresa, facilita el diseño de programas de capacitación claros, medibles y alineados con las necesidades del equipo y del negocio.</p>
+</div>
+
+
+
+
+<!-- ===== IDIOMAS ===== -->
+
+<h2>Idiomas</h2>
+
+<div class="grid-formacion">
+
+<div class="tarjeta">
+<h3>Español</h3>
+<p>Nativo</p>
+</div>
+
+<div class="tarjeta">
+<h3>Inglés</h3>
+<p>B2</p>
+</div>
+
+</div>
+
+</div>
+<div class="botones-cta">
+<button class="cta" onclick="mostrarSeccion('formacion')">
+Ver formación
+</button>
+
+<button class="cta cta-secundario" onclick="mostrarSeccion('trayectoria')">
+Ver trayectoria profesional
+</button>
+</div>
+<!-- ================= CONTACTO ================= -->
+
+<section class="contacto">
+
+  <div class="contacto-info">
+    <h2>Contacto</h2>
+
+    <p><strong>Email:</strong><br>
+    info@soyaranza.com</p>
+
+    <p><strong>Teléfono:</strong><br>
+    +34 622 938 920</p>
+
+    <p><strong>Ubicación:</strong><br>
+    Antequera, Málaga</p>
+	<p>
+LinkedIn:
+<a href="https://www.linkedin.com/in/ar%C3%A1nzazu-rodr%C3%ADguez-ram%C3%ADrez-17b863214"
+target="_blank"
+class="linkedin-contacto">
+Ver perfil profesional
+</a>
+</p>
+  </div>
+
+  <div class="contacto-form">
+
+    <form>
+<h2 class="frase-contacto">
+¿Crees que puedo ayudarte? Escríbeme
+</h2>
+      <div class="fila">
+        <input type="text" placeholder="Nombre">
+        <input type="email" placeholder="Dirección de correo electrónico">
+      </div>
+
+      <textarea placeholder="Mensaje"></textarea>
+
+      <div class="captcha">
+        <span>1 + 5 =</span>
+        <input type="text">
+        <button type="submit">Enviar</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+</div>
+<!-- ================================= -->
+<!-- ========= TRAYECTORIA ========= -->
+<!-- ================================= -->
+
+<div id="trayectoria" class="seccion" style="display:none;">
+
+<h1>Trayectoria profesional</h1>
+
+<div class="grid-formacion">
+
+  <div class="tarjeta">
+    <h3>Docente experta en Transformación Digital</h3>
+    <p class="meta">ATU Formación y Digitalización S.L. | 2025 – Actualidad</p>
+    <p class="desc">
+      Desarrollo e impartición de programas de capacitación en competencias digitales y adopción tecnológica dirigidos a entornos educativos y profesionales. Mi trabajo combina formación aplicada, metodologías activas y acompañamiento individualizado para facilitar la integración real de herramientas digitales en procesos de trabajo.
+
+Esta experiencia me ha permitido trasladar la transformación digital al plano práctico, ayudando a profesionales y equipos a mejorar su organización, autonomía y toma de decisiones mediante el uso estratégico de la tecnología.
+    </p>
+  </div>
+
+  <div class="tarjeta">
+    <h3>Asesora de Formación y Captación</h3>
+    <p class="meta">AIBE | 2024 – 2025</p>
+    <p class="desc">
+      Gestión de procesos de captación y orientación formativa con enfoque estratégico, alineando necesidades profesionales con soluciones educativas. Participé en la comunicación de valor de programas formativos, fortaleciendo la relación con clientes y optimizando procesos de información y seguimiento.
+
+Esta etapa reforzó mi capacidad para conectar formación, objetivos empresariales y desarrollo profesional, aplicando criterios de marketing relacional, comunicación efectiva y análisis de necesidades.
+    </p>
+  </div>
+
+  <div class="tarjeta">
+    <h3>Maestra de Educación Infantil</h3>
+    <p class="meta">CEI Alborada | 2022 – 2023</p>
+    <p class="desc">
+      Diseño y ejecución de programaciones educativas integrando recursos digitales y metodologías activas. Desarrollo de estrategias de comunicación, planificación y atención personalizada que favorecen el aprendizaje y la coordinación con distintos agentes.
+
+Estas competencias son plenamente transferibles al ámbito empresarial, especialmente en formación de equipos, estructuración de procesos y facilitación del aprendizaje aplicado.
+    </p>
+  </div>
+  <div class="tarjeta">
+    <h3>Atención al Cliente y Apoyo Operativo</h3>
+    <p class="meta">Carrefour – Antequera | 2024 – 2025</p>
+    <p class="desc">
+      Gestión de herramientas digitales corporativas vinculadas a facturación, inventario y atención al usuario. Participación en la mejora de procesos internos y apoyo a la incorporación de nuevos empleados en el uso de sistemas digitales.
+
+Esta experiencia fortaleció mi orientación a procesos, eficiencia operativa y comunicación profesional en entornos dinámicos.
+    </p>
+  </div>
+
+</div>
+<script>
+function mostrarSeccion(id) {
+
+  document.querySelectorAll('.seccion').forEach(sec => {
+    sec.style.display = 'none';
+  });
+
+  const objetivo = document.getElementById(id);
+
+  if (objetivo) {
+    objetivo.style.display = 'block';
+    objetivo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+}
+</script>
+</div>
+</body>
+</html>
